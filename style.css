@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.img-iphone {
+    width: 500px;
+    margin-top: 50px;
+    z-index: 2;
+    animation: 1.5s ease-in-out iphone-aparece;
+}
+
+main .div-principal h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+main .div-principal h3 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+main .div-principal p {
+    margin-bottom: 10px;
+}
+
+main .div-principal h6 { 
+    color: #626262;
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 30px;
+}
+
+main .div-principal button { 
+    background-color: #0071e3;
+    border-radius: 20px;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.5s ease-in-out all;
+} 
+
+main .div-principal button:hover { 
+    background-color: #5dadfd;
+}
+
+main .div-principal button:active { 
+    background-color: #81A5C4;
+}
+
+main .div-principal h5 {
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 30px;
+    color: #323232;
+} 
+
+main .div-principal .conteudo {
+    display: flex;
+    margin-top: 10px;
+    gap: 5px;
+}
+
+main .div-principal .conteudo span {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#azul {
+    background-color: #81A5C4;
+}
+
+#amarelo {
+    background-color: #F7DA47;
+}
+
+#branco {
+    background-color: #C1C1C1;
+}
+
+#preto {
+    background-color: #272D33;
+}
+
+#vermelho {
+    background-color: #B50012;
+}
+
+#roxo {
+    background-color: #EDE7F1;
+}
+
+.circulo {
+    background-color: #81A5C4;
+    clip-path: circle(600px at right 1000px);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: 2.5s ease-in-out circulo-aparece;
+}
+
+@media (max-width: 800px){
+    main {
+        flex-direction: column;
+    }
+
+    .img-iphone {
+        width: 200px;
+        margin-top: 30px;
+        animation: 1.5s ease-in-out iphone-aparece-celular;
+    }
+
+    .circulo {
+        clip-path: circle(350px at right 1000px);
+        animation: 2.5s cubic-bezier(.24,1.04,.91,-0.06) circulo-aparece-celular;
+    }
+}
+
+
+
+@keyframes iphone-aparece {
+    from {
+        width: 50px;
+    }
+
+    to {
+        width: 500px;
+    }
+}
+
+@keyframes iphone-aparece-celular {
+    from {
+        width: 50px;
+    }
+
+    to {
+        width: 200px;
+    }
+}
+
+@keyframes circulo-aparece {
+    0% {
+        clip-path: circle(0%);
+    }
+
+    40% {
+        clip-path: circle(800px at right 1000px);
+    }
+
+    100% {
+        clip-path: circle(600px at right 1000px);
+    }
+}
+
+@keyframes circulo-aparece-celular {
+    0% {
+        clip-path: circle(0%);
+    }
+
+    30% {
+        clip-path: circle(350px at right 1000px);
+    }
+
+    70% {
+        clip-path: circle(500px at right 1000px);
+    }
+
+    100% {
+        clip-path: circle(350px at right 1000px);
+    }
+}
